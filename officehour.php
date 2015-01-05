@@ -54,18 +54,39 @@ class OfficeHour_Widget extends WP_Widget
 	$d = wp_parse_args($d, $default);
 
         ?>
+	<h3>Configuration</h3>
         <p>
 		<label for='<?php echo $this->get_field_id('title'); ?>'>Titre du Widget (facultatif)</label>
+		<br/>
 		<input value='<?php echo $d['title']; ?>'  name='<?php echo $this->get_field_name('title'); ?>' id='<?php echo $this->get_field_id('title'); ?>' type='text'/>
 	</p>
         <p>
 		<label for='<?php echo $this->get_field_id('name'); ?>'>Nom (facultatif)</label>
-                <input value='<?php echo $d['name']; ?>' placeholder='ex. Guillaume Warckol' name='<?php echo $this->get_field_name('name'); ?>' id='<?php echo $this->get_field_id('name'); ?>' type='text'/>
+                <br/>
+		<input value='<?php echo $d['name']; ?>' placeholder='ex. Xavier Niel' name='<?php echo $this->get_field_name('name'); ?>' id='<?php echo $this->get_field_id('name'); ?>' type='text'/>
 	</p>
         <p>
-            <label for='<?php echo $this->get_field_id('slug'); ?>'>Nom d'utilisateur OfficeHour (Aide : <a href='http://www.officehour.fr/expert/profile/description'>Mon Compte</a>)</label>
-                http://www.officehour.fr/<input value='<?php echo $d['slug']; ?>' placeholder='guillaume-warckol' name='<?php echo $this->get_field_name('slug'); ?>' id='<?php echo $this->get_field_id('slug'); ?>' type='text'/>
+            	<label for='<?php echo $this->get_field_id('slug'); ?>' style='color:#ff5f5f;font-weight:bold;'>Nom d'utilisateur OfficeHour</label>
+            	<br/>
+		<input value='<?php echo $d['slug']; ?>' placeholder='ex. xavier-niel' name='<?php echo $this->get_field_name('slug'); ?>' id='<?php echo $this->get_field_id('slug'); ?>' type='text'/>
+		<br/>
+		<br/>
+		Exemple : http://www.officehour.fr/<b style='color:#ff5f5f;'>xavier-niel</b>
+		<br/>
+		<br/>
+		<small>
+			Retrouvez votre nom d'utilisateur en vous connectant sur votre Compte : <a target='_blank'  href='http://www.officehour.fr/expert/profile/description'>Mon Compte</a>
+		</small>
+		<br/>
+		<br/>
 	</p>
+	<hr>
+	<h3>Apparence</h3>
+	<p>
+                <label for='<?php echo $this->get_field_id('title'); ?>'>Titre du Widget (facultatif)</label>
+                <br/>
+                <input value='<?php echo $d['title']; ?>'  name='<?php echo $this->get_field_name('title'); ?>' id='<?php echo $this->get_field_id('title'); ?>' type='text'/>
+        </p>
         <?php
     }
 
