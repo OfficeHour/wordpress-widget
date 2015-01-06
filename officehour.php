@@ -173,7 +173,7 @@ class OfficeHour_Widget extends WP_Widget
         <p>
                 <label for='<?php echo $this->get_field_id('price'); ?>'>Afficher le tarif</label>
                 <br/>
-                <input value='true' <?php if($this->issetNotEmpty_Tool($d,'button-text')) {?> checked='checked'<?php } ?> name='<?php echo $this->get_field_name('price'); ?>' id='<?php echo $this->get_field_id('price'); ?>' type='checkbox'/> Oui
+                <input value='true' <?php if($this->issetNotEmpty_Tool($d,'price')) {?> checked='checked'<?php } ?> name='<?php echo $this->get_field_name('price'); ?>' id='<?php echo $this->get_field_id('price'); ?>' type='checkbox'/> Oui
         </p>
         
  
