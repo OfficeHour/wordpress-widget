@@ -28,13 +28,62 @@ class OfficeHour_Widget extends WP_Widget
 
         if(isset($d['slug']) && !empty($d['slug'])) {
         ?>
-        <a id='officehour_widget' data-slug='<?php echo $d['slug']; ?>' href='http://www.officehour.fr/<?php echo $d['slug']; ?>' >
+        <a 
+            id='officehour_widget'
+            data-slug='<?php echo $d['slug']; ?>'
+            href='http://www.officehour.fr/<?php echo $d['slug']; ?>'
+            <?php 
+            
+            if(isset($d['width']) && !empty($d['width'])) { ?>
+                data-width='<?php echo $d['width']?>'
+            <?php 
+            
+            } ?><?php 
+            if(isset($d['height']) && !empty($d['height'])) { ?>
+            data-height='<?php echo $d['height']?>'
+            <?php 
+            
+            } ?><?php 
+            if(isset($d['price']) && !empty($d['price'])) { ?>
+            data-price='true'
+            <?php 
+            
+            } ?><?php if(isset($d['border-color']) && !empty($d['border-color'])) { ?>
+            data-border-color='<?php echo $d['border-color'];?>'
+            <?php 
+            
+            } ?><?php if(isset($d['button-color']) && !empty($d['button-color'])) { ?>
+            data-button-color='<?php echo $d['button-color'];?>'
+            <?php 
+            
+            } ?><?php if(isset($d['background-color']) && !empty($d['background-color'])) { ?>
+            data-background-color='<?php echo $d['background-color'];?>'
+            <?php 
+            
+            } ?><?php if(isset($d['button-text-color']) && !empty($d['button-text-color'])) { ?>
+            data-button-text-color='<?php echo $d['button-text-color'];?>'
+            <?php 
+            
+            } ?><?php if(isset($d['body-text-color']) && !empty($d['body-text-color'])) { ?>
+            data-body-text-color='<?php echo $d['body-text-color'];?>'
+            <?php 
+            
+            }?><?php if(isset($d['button-text']) && !empty($d['button-text'])) { ?>
+            data-button-text='<?php echo addslashes($d['button-text']);?>'
+            <?php 
+            
+            } ?>
+        >
             <?php if( empty($d['name']) ) { ?>
                 OfficeHour
             <?php } else { ?>
                 <?php echo $d['name']; ?> sur OfficeHour
             <?php } ?>
         </a>
+
+<!--<a id='officehour_widget' data-slug='guillaume-warckol' href='http://www.officehour.fr/guillaume-warckol'  >Guillaume Warckol sur OfficeHour </a>
+<script src='http://www.officehour.fr/widget/script.js/expert' type='text/javascript'></script>-->
+
         <script src='http://www.officehour.fr/widget/script.js/expert' type='text/javascript'></script>
         <?php
         }
@@ -83,16 +132,68 @@ class OfficeHour_Widget extends WP_Widget
 	<hr>
 	<h3>Apparence</h3>
 	<p>
-                <label for='<?php echo $this->get_field_id('title'); ?>'>Titre du Widget (facultatif)</label>
+                <label for='<?php echo $this->get_field_id('width'); ?>'>Largeur (px ou %)</label>
                 <br/>
-                <input value='<?php echo $d['title']; ?>'  name='<?php echo $this->get_field_name('title'); ?>' id='<?php echo $this->get_field_id('title'); ?>' type='text'/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'width'); ?>'  name='<?php echo $this->get_field_name('width'); ?>' id='<?php echo $this->get_field_id('width'); ?>' type='text'/>
         </p>
+        <p>
+                <label for='<?php echo $this->get_field_id('height'); ?>'>Hauteur (px ou %)</label>
+                <br/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'height'); ?>'  name='<?php echo $this->get_field_name('height'); ?>' id='<?php echo $this->get_field_id('height'); ?>' type='text'/>
+        </p>
+        <p>
+                <label for='<?php echo $this->get_field_id('body-text-color'); ?>'>Couleur du texte (hex, ex. #F07057)</label>
+                <br/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'body-text-color'); ?>'  name='<?php echo $this->get_field_name('body-text-color'); ?>' id='<?php echo $this->get_field_id('body-text-color'); ?>' type='text'/>
+        </p>
+        <p>
+                <label for='<?php echo $this->get_field_id('border-color'); ?>'>Couleur de la bordure (hex)</label>
+                <br/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'border-color'); ?>'  name='<?php echo $this->get_field_name('border-color'); ?>' id='<?php echo $this->get_field_id('border-color'); ?>' type='text'/>
+        </p>
+        <p>
+                <label for='<?php echo $this->get_field_id('button-color'); ?>'>Couleur du bouton (hex)</label>
+                <br/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'button-color'); ?>'  name='<?php echo $this->get_field_name('button-color'); ?>' id='<?php echo $this->get_field_id('button-color'); ?>' type='text'/>
+        </p>
+        
+        <p>
+                <label for='<?php echo $this->get_field_id('button-text-color'); ?>'>Couleur du texte du boutton (hex)</label>
+                <br/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'button-text-color'); ?>'  name='<?php echo $this->get_field_name('button-text-color'); ?>' id='<?php echo $this->get_field_id('button-text-color'); ?>' type='text'/>
+        </p>
+        <p>
+                <label for='<?php echo $this->get_field_id('background-color'); ?>'>Couleur de fond (hex)</label>
+                <br/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'background-color'); ?>'  name='<?php echo $this->get_field_name('background-color'); ?>' id='<?php echo $this->get_field_id('background-color'); ?>' type='text'/>
+        </p>
+        <p>
+                <label for='<?php echo $this->get_field_id('button-text'); ?>'>Texte du boutton (hex)</label>
+                <br/>
+                <input value='<?php echo issetNotEmpty_Tool($d,'button-text'); ?>'  name='<?php echo $this->get_field_name('button-text'); ?>' id='<?php echo $this->get_field_id('button-text'); ?>' type='text'/>
+        </p>
+        
+        <p>
+                <label for='<?php echo $this->get_field_id('price'); ?>'>Afficher le tarif</label>
+                <br/>
+                <input value='true'  name='<?php echo $this->get_field_name('price'); ?>' id='<?php echo $this->get_field_id('price'); ?>' type='checkbox'/> Oui
+        </p>
+        
+ 
         <?php
     }
-
+    
     public function update($new, $old)
     {
          return $new;
+    }
+    
+    public function issetNotEmpty_Tool($tab,$key) {
+        if(isset($tab[$key]) && !empty($tab[$key])) {
+            return $tab[$key];
+        } else {
+            return '';
+        }
     }
 }
 
