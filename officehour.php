@@ -81,9 +81,6 @@ class OfficeHour_Widget extends WP_Widget
             <?php } ?>
         </a>
 
-<!--<a id='officehour_widget' data-slug='guillaume-warckol' href='http://www.officehour.fr/guillaume-warckol'  >Guillaume Warckol sur OfficeHour </a>
-<script src='http://www.officehour.fr/widget/script.js/expert' type='text/javascript'></script>-->
-
         <script src='http://www.officehour.fr/widget/script.js/expert' type='text/javascript'></script>
         <?php
         }
@@ -144,28 +141,28 @@ class OfficeHour_Widget extends WP_Widget
         <p>
                 <label for='<?php echo $this->get_field_id('body-text-color'); ?>'>Couleur du texte (hex, ex. #F07057)</label>
                 <br/>
-                <input value='<?php echo $this->issetNotEmpty_Tool($d,'body-text-color'); ?>'  name='<?php echo $this->get_field_name('body-text-color'); ?>' id='<?php echo $this->get_field_id('body-text-color'); ?>' type='text'/>
+                #<input value='<?php echo $this->issetNotEmpty_Tool($d,'body-text-color'); ?>'  name='<?php echo $this->get_field_name('body-text-color'); ?>' id='<?php echo $this->get_field_id('body-text-color'); ?>' type='text'/>
         </p>
         <p>
                 <label for='<?php echo $this->get_field_id('border-color'); ?>'>Couleur de la bordure (hex)</label>
                 <br/>
-                <input value='<?php echo $this->issetNotEmpty_Tool($d,'border-color'); ?>'  name='<?php echo $this->get_field_name('border-color'); ?>' id='<?php echo $this->get_field_id('border-color'); ?>' type='text'/>
+                #<input value='<?php echo $this->issetNotEmpty_Tool($d,'border-color'); ?>'  name='<?php echo $this->get_field_name('border-color'); ?>' id='<?php echo $this->get_field_id('border-color'); ?>' type='text'/>
         </p>
         <p>
                 <label for='<?php echo $this->get_field_id('button-color'); ?>'>Couleur du bouton (hex)</label>
                 <br/>
-                <input value='<?php echo $this->issetNotEmpty_Tool($d,'button-color'); ?>'  name='<?php echo $this->get_field_name('button-color'); ?>' id='<?php echo $this->get_field_id('button-color'); ?>' type='text'/>
+                #<input value='<?php echo $this->issetNotEmpty_Tool($d,'button-color'); ?>'  name='<?php echo $this->get_field_name('button-color'); ?>' id='<?php echo $this->get_field_id('button-color'); ?>' type='text'/>
         </p>
         
         <p>
                 <label for='<?php echo $this->get_field_id('button-text-color'); ?>'>Couleur du texte du boutton (hex)</label>
                 <br/>
-                <input value='<?php echo $this->issetNotEmpty_Tool($d,'button-text-color'); ?>'  name='<?php echo $this->get_field_name('button-text-color'); ?>' id='<?php echo $this->get_field_id('button-text-color'); ?>' type='text'/>
+                #<input value='<?php echo $this->issetNotEmpty_Tool($d,'button-text-color'); ?>'  name='<?php echo $this->get_field_name('button-text-color'); ?>' id='<?php echo $this->get_field_id('button-text-color'); ?>' type='text'/>
         </p>
         <p>
                 <label for='<?php echo $this->get_field_id('background-color'); ?>'>Couleur de fond (hex)</label>
                 <br/>
-                <input value='<?php echo $this->issetNotEmpty_Tool($d,'background-color'); ?>'  name='<?php echo $this->get_field_name('background-color'); ?>' id='<?php echo $this->get_field_id('background-color'); ?>' type='text'/>
+                #<input value='<?php echo $this->issetNotEmpty_Tool($d,'background-color'); ?>'  name='<?php echo $this->get_field_name('background-color'); ?>' id='<?php echo $this->get_field_id('background-color'); ?>' type='text'/>
         </p>
         <p>
                 <label for='<?php echo $this->get_field_id('button-text'); ?>'>Texte du boutton (hex)</label>
